@@ -1,0 +1,76 @@
+.search-bar {
+    padding-left: 5px; 
+    border-left: none;
+}
+
+.input-group-text {
+    background-color: white; 
+    border-right: none;
+}
+.input-group{
+    margin-left: 5%;
+}
+
+.input-group-text i {
+    color: gray; 
+}
+.dropdown-item{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.nav-item.dropdown .dropdown-menu {
+    display: block;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 1s ease;
+    pointer-events: none; /* Prevent hover from other areas */
+}
+  
+.nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* Enable hover on the dropdown */
+}
+  
+.nav-item.dropdown:hover .dropdown-menu.custom-dropdown-menu li .dropdown-menu {
+    display: none; 
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 1s ease;
+}
+  
+.nav-item.dropdown:hover .dropdown-menu.custom-dropdown-menu li:hover .dropdown-menu {
+    display: block;
+    margin-left: 100%;
+    position: absolute;
+    opacity: 1;
+    transform: translateY(0);
+    top: 0; 
+}
+
+.dropdown-item-wrapper .btn.dropdown-toggle {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 2%;
+}
+
+.dropdown-item-wrapper .dropdown-menu {
+    left: 0;
+}
+.carousel-inner .carousel-item {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    height: 460px; /* Adjust the height of carousel items */
+  }
+  .card {
+    width: 300px;
+    height: 435px;
+    margin-top: 1%;
+    margin-left: 8%;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
