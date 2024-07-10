@@ -1,6 +1,6 @@
 .search-bar {
     padding-left: 5px; 
-    border-left: none;
+    
 }
 
 .input-group-text {
@@ -14,40 +14,70 @@
 .input-group-text i {
     color: gray; 
 }
-.dropdown-item{
+/* Ensure dropdowns are hidden by default */
+/* Hide dropdowns by default on small screens */
+@media (min-width: 701.98px) {
+  .navbar-nav .dropdown-menu {
+    display: block; /* Important to override Bootstrap default behavior */
+    opacity: 0;
+    transform: translateY(25px);
+    pointer-events: none;
+    position: absolute;
+    z-index: 1000;
+    transition: opacity 0.7s ease, transform 1s ease;
+  }
+  .navbar-nav .dropdown:hover > .dropdown-menu {
+    display: block !important; /* Important to override Bootstrap default behavior */
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .navbar-nav .dropdown-item-wrapper .dropdown-menu {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Position to the right of the parent dropdown button */
+    z-index: 1001; /* Ensure it appears above the dropdown */
+  }
+  #browseLink:hover + #browseDropdown,
+#webDevLink:hover + #webDevDropdown,
+#anotherCategoryLink:hover + #anotherCategoryDropdown {
+  display: block !important; /* Important to override Bootstrap default behavior */
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; 
+}
+}
+
+
+/* General dropdown item styles */
+/* .dropdown-item {
     font-weight: 600;
     font-size: 14px;
 }
 
-.nav-item.dropdown .dropdown-menu {
-    display: block;
+
+
+
+
+.dropdown-item-wrapper .dropdown-menu {
+    display: none;
     opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 0.7s ease, transform 1s ease;
-    pointer-events: none; /* Prevent hover from other areas */
-}
-  
-.nav-item.dropdown:hover .dropdown-menu {
-    opacity: 1;
     transform: translateY(0);
-    pointer-events: auto; /* Enable hover on the dropdown */
-}
-  
-.nav-item.dropdown:hover .dropdown-menu.custom-dropdown-menu li .dropdown-menu {
-    display: none; 
-    opacity: 0;
-    transform: translateY(25px);
     transition: opacity 0.7s ease, transform 1s ease;
-}
-  
-.nav-item.dropdown:hover .dropdown-menu.custom-dropdown-menu li:hover .dropdown-menu {
-    display: block;
-    margin-left: 100%;
     position: absolute;
+    left: 100%; 
+    top: 0; 
+    margin-top: 0;
+}
+
+
+.dropdown-item-wrapper:hover .dropdown-menu {
+    display: block;
     opacity: 1;
     transform: translateY(0);
-    top: 0; 
+    pointer-events: auto; 
 }
+
 
 .dropdown-item-wrapper .btn.dropdown-toggle {
     font-size: 14px;
@@ -55,22 +85,103 @@
     padding-left: 10px;
     padding-right: 10px;
     margin-left: 2%;
+} */
+ 
+ 
+  .three{
+    display: none;
+   }
+  
+ 
+.card-custom {
+    margin-bottom: 20px;
+    
+  }
+  .card-control{
+    margin-top: 2%;
+  }
+  
+  @media (min-width: 750px) {
+    .card-custom {
+      max-width: calc(100% - 20px);
+      overflow: hidden;
+    }
+    
+  }
+  .fixed-size-img {
+   width: 500px; /* Set a fixed width for the image */
 }
 
-.dropdown-item-wrapper .dropdown-menu {
-    left: 0;
+
+/* Adjust dropdown item styles */
+.navbar .dropdown-item {
+  
+  color: #333;
+  text-decoration: none;
 }
+
+
+.navbar .dropdown-item:hover {
+  background-color: #F1F5F9;
+  color: #754FFE;
+}
+
+/* Adjust the header and text colors */
+
+
+
+@media (max-width: 767px) {
+   .fixed-size-img {
+      width: 100%; /* Adjust width for smaller screens */
+      max-width: 500px; /* Keep it from getting larger than the original size */
+   }
+}
+  
 .carousel-inner .carousel-item {
     transition: transform 0.5s ease, opacity 0.5s ease;
-    height: 460px; /* Adjust the height of carousel items */
+    /* Adjust the height of carousel items */
   }
   .card {
-    width: 300px;
-    height: 435px;
+    
     margin-top: 1%;
-    margin-left: 8%;
+    
     transition: box-shadow 0.3s ease-in-out;
   }
   .card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    background-color: #343a40;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+}
+.carousel-control-prev {
+    left: 1.5rem;
+}
+.carousel-control-next {
+    right: 0.5rem;
+}
+
+  
+.nav-link{
+    font-size: 14px;
+
+}
+.links .nav-link {
+    color: #475569;
+  }
+
+  .links .nav-link:hover {
+    color: #754FFE;
   }
